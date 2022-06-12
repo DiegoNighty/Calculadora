@@ -9,7 +9,7 @@ public class Settings {
 	public static final String APPLICATION_TITLE = "Mi Calculadora";
 	public static final Font FONT = new Font("Monospaced", Font.BOLD, 22);
 	public static final Dimension BUTTON_SIZE = new Dimension(80, 80);
-	public static final Dimension PANEL_SIZE = new Dimension(367, 425);
+	public static final Dimension PANEL_SIZE = new Dimension(367, 470);
 
 	public static final Insets BUTTON_MARGIN = new Insets(20, 20, 20,20);
 

@@ -1,11 +1,16 @@
 package com.github.diegonighty.calc.operations;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public enum OperationType {
 
 	NOTHING("?", false),
 	ADD("+", true),
 	DIVISION("/", true),
 	MULTIPLICATION("*", true),
+	POW("^", true),
 	SUBTRACTION("-", true);
 
 	private final String math;
@@ -23,7 +28,9 @@ public enum OperationType {
 		return canPreview;
 	}
 
-	public static OperationType[] MATHS() {
-		return new OperationType[]{ADD, DIVISION, MULTIPLICATION, SUBTRACTION};
+	public static List<OperationType> MATHS() {
+		return Arrays.stream(values())
+				.filter(operationType -> operationType.canPreview)
+				.collect(Collectors.toList());
 	}
 }
