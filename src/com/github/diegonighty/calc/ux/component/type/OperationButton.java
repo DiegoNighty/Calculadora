@@ -1,6 +1,7 @@
 package com.github.diegonighty.calc.ux.component.type;
 
 import com.github.diegonighty.calc.data.CalculatorData;
+import com.github.diegonighty.calc.exception.OperationException;
 import com.github.diegonighty.calc.operations.OperationType;
 
 public class OperationButton extends CalculatorButton {
@@ -12,7 +13,7 @@ public class OperationButton extends CalculatorButton {
 	}
 
 	@Override
-	public void execute(CalculatorData data) {
+	public void execute(CalculatorData data) throws OperationException {
 		data.addOperation(operationType);
 	}
 }
