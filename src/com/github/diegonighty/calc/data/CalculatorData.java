@@ -1,5 +1,6 @@
 package com.github.diegonighty.calc.data;
 
+import com.github.diegonighty.calc.exception.OperationException;
 import com.github.diegonighty.calc.operations.ComputationProvider;
 import com.github.diegonighty.calc.operations.OperationType;
 
@@ -24,7 +25,7 @@ public class CalculatorData {
 		return this;
 	}
 
-	public CalculatorData addOperation(OperationType type) {
+	public CalculatorData addOperation(OperationType type) throws OperationException {
 		if (canCompute()) {
 			compute();
 		}
@@ -38,7 +39,7 @@ public class CalculatorData {
 		return this;
 	}
 
-	public Number compute() {
+	public Number compute() throws OperationException {
 		Number result = ComputationProvider.of(lastOperation)
 				.compute(lastFullNumber, convertBuilder());
 
